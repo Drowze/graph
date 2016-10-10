@@ -49,9 +49,9 @@ Omaha,Kansas City,190
 Kansas City,St Louis,250
 Chicago,Detroit,280
 Chicago,Washington,700
-Chicago,Indianopolis,180
+Chicago,Indianapolis,180
 Chicago,St Louis,300
-St Louis,Indianopolis,250
+St Louis,Indianapolis,250
 St Louis,Memphis,290
 St Louis,Little Rock,400
 Memphis,Nashville,210

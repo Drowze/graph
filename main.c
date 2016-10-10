@@ -3,7 +3,7 @@
 #include <math.h>
 #include <string.h>
 
-#define NUMBER_OF_CITIES 25 // e.g. 25 cities implies 25^2 routes
+#define NUMBER_OF_CITIES 42 // e.g. 25 cities implies 25^2 routes
 
 /* Matrix's data. (there ain't no table headers; so I figured it would be
    better to include all the route's info in a struct) */
@@ -12,6 +12,8 @@ typedef struct {
   char destiny[30];
   int distance;
 }s_route;
+
+int edit_route_by_cities(int graph_map[][NUMBER_OF_CITIES], s_route route);
 
 char **default_cities() {
   static char *cities[] = { // 42 cities. Coincidence?
@@ -28,8 +30,8 @@ char **default_cities() {
     "Detroit",
     "Fort Lauderdale",
     "Grand Canyon",
-    "Hounston",
-    "Indianopolis",
+    "Houston",
+    "Indianapolis",
     "Kansas City",
     "Lake Tahoe",
     "Las Vegas",
@@ -40,23 +42,23 @@ char **default_cities() {
     "Milwaukee",
     "Minneapolis",
     "Nashville",
-    // "Nova Orleans",
-    // "Nova York",
-    // "Omaha",
-    // "Orlando",
-    // "Palm Springs",
-    // "Phoenix",
-    // "Portland",
-    // "Richmond",
-    // "Salt Lake City",
-    // "San Antonio",
-    // "San Diego",
-    // "San Francisco",
-    // "Seatle",
-    // "St Louis",
-    // "Vail",
-    // "Washington",
-    // "Yellowstone",
+    "Nova Orleans",
+    "Nova York",
+    "Omaha",
+    "Orlando",
+    "Palm Springs",
+    "Phoenix",
+    "Portland",
+    "Richmond",
+    "Salt Lake City",
+    "San Antonio",
+    "San Diego",
+    "San Francisco",
+    "Seatle",
+    "St Louis",
+    "Vail",
+    "Washington",
+    "Yellowstone",
   };
   // cities = {"teste1", "teste2", "teste3", "teste4", "teste5"};
   return cities;
@@ -75,17 +77,27 @@ char **default_cities() {
 //   return graph_map; 
 // }
 
-void initialize_matrix(int graph_map[NUMBER_OF_CITIES][NUMBER_OF_CITIES]) {
-  int i, j;
-  for(i = 0; i < NUMBER_OF_CITIES; i++)
-    for(j = 0; j < NUMBER_OF_CITIES; j++)
-      graph_map[i][j] = 0;
+int get_routes_from_file(int graph_map[][NUMBER_OF_CITIES], char *filename) {
+  char line[150];
+  char *tok;
+  s_route route;
+  FILE *fp = fopen(filename, "r");
+
+  if(fp == NULL)
+    return -1;
+
+  while(fgets(line, 150*sizeof(char), fp) != NULL){
+    strcpy(route.origin, strtok(line, ","));
+    strcpy(route.destiny, strtok(NULL, ","));
+    route.distance = atoi(strtok(NULL, ","));
+    
+    edit_route_by_cities(graph_map, route);
+  }
+  return 0;
 }
 
-
-
 /* ---- */
-void insert_city(char city[], char *cities[]) {
+void insert_city(char *city, char *cities[]) {
   // insert a new city to the array of words "cities"
 }
 
@@ -104,7 +116,6 @@ int edit_route_by_cities(int graph_map[][NUMBER_OF_CITIES], s_route route){
   
   if(i>=NUMBER_OF_CITIES)
     return -1; // city does not exist
-  i = i * NUMBER_OF_CITIES;
 
   while((strcmp(default_cities()[j], route.destiny) != 0) && (j<NUMBER_OF_CITIES))
     j++;
@@ -145,11 +156,10 @@ int main(int argc, char *argv[]) {
 
   s_route route;
   
-  int graph_map[NUMBER_OF_CITIES][NUMBER_OF_CITIES];
-  initialize_matrix(graph_map);
+  int graph_map[NUMBER_OF_CITIES][NUMBER_OF_CITIES] = {0};
 
   do{
-    puts("1- Prosseguir");
+    puts("1- Ler arquivo routes.txt");
     puts("2- Verificar ID das rotas");
     puts("3- Editar rota pelo seu ID");
     puts("4- Editar rota pelas suas cidades");
@@ -161,7 +171,8 @@ int main(int argc, char *argv[]) {
       case 0:
         break;
 
-      case 1: 
+      case 1:
+        get_routes_from_file(graph_map, "routes.txt");
         break;
 
       case 2:
