@@ -1,0 +1,79 @@
+Seatle,Portland,170
+Seatle,Boise,500
+Portland,Boise,420
+Portland,San Francisco,640
+Portland,Lake Tahoe,300
+San Francisco,Lake Tahoe,300
+San Francisco,Los Angeles,380
+Boise,Yellowstone,670
+Boise,Lake Tahoe,420
+Lake Tahoe,Salt Lake City,520
+Lake Tahoe,Palm Springs,780
+Los Angeles,Las Vegas,270
+Los Angeles,Palm Springs,160
+Los Angeles,San Diego,120
+Las Vegas,Salt Lake City,420
+Las Vegas,Grand Canyon,470
+Las Vegas,Palm Springs,290
+Palm Springs,Grand Canyon,440
+Palm Springs,San Diego,140
+San Diego,Phoenix,350
+Phoenix,Grand Canyon,470
+Phoenix,Albuquerque,350
+Phoenix,Dallas,1070
+Phoenix,San Antonio,990
+Phoenix,Salt Lake City,530
+Yellowstone,Minneapolis,1340
+Yellowstone,Denver,930
+Denver,Vail,160
+Denver,Salt Lake City,530
+Denver,Omaha,540
+Denver,Colorado Springs,120
+Denver,Aspen,180
+Vail,Aspen,80
+Aspen,Colorado Springs,180
+Colorado Springs,Dallas,730
+Dallas,Kansas City,550
+Dallas,Atlanta,790
+Dallas,Houston,250
+Dallas,San Antonio,280
+Dallas,Little Rock,320
+San Antonio,Houston,310
+Houston,Nova Orleans,530
+Minneapolis,Omaha,380
+Minneapolis,Chicago,410
+Minneapolis,Milwaukee,340
+Milwaukee,Chicago,90
+Omaha,Chicago,470
+Omaha,Kansas City,190
+Kansas City,St Louis,250
+Chicago,Detroit,280
+Chicago,Washington,700
+Chicago,Indianopolis,180
+Chicago,St Louis,300
+St Louis,Indianopolis,250
+St Louis,Memphis,290
+St Louis,Little Rock,400
+Memphis,Nashville,210
+Memphis,Atlanta,390
+Memphis,Little Rock,140
+Nova Orleans,Orlando,640
+Nova Orleans,Miami,860
+Nova Orleans,Atlanta,470
+Detroit,Albany,650
+Detroit,Nova York,640
+Detroit,Washington,530
+Indianapolis,Washington,590
+Indianapolis,Nashville,290
+Nashville,Richmond,710
+Nashville,Atlanta,240
+Atlanta,Richmond,560
+Atlanta,Orlando,440
+Orlando,Fort Lauderdale,180
+Orlando,Miami,230
+Miami,Fort Lauderdale,30
+Albany,Nova York,150
+Albany,Boston,170
+Nova York,Boston,210
+Nova York,Washington,240
+Washington,Richmond,200
